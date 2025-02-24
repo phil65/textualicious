@@ -27,6 +27,7 @@ class DataClassTable[T](DataTable):
         self,
         item_type: type[T],
         *,
+        items: list[T] | None = None,
         show_hidden: bool = False,
         show_header: bool = True,
         show_row_labels: bool = True,
@@ -46,6 +47,7 @@ class DataClassTable[T](DataTable):
 
         Args:
             item_type: The type of items to display
+            items: Initial items to display
             show_hidden: Whether to show fields starting with underscore
             show_header: Whether the table header should be visible
             show_row_labels: Whether the row labels should be shown
@@ -78,8 +80,13 @@ class DataClassTable[T](DataTable):
         )
         self._item_type = item_type
         self._show_hidden = show_hidden
+        self._initial = items
         self._items: dict[RowKey, T] = {}
+
+    def on_mount(self):
         self._setup_columns()
+        for item in self._initial or []:
+            self.add_item(item)
 
     def _setup_columns(self) -> None:
         """Set up columns based on the item type's fields."""
@@ -140,7 +147,7 @@ if __name__ == "__main__":
     from dataclasses import dataclass
     from datetime import datetime
 
-    from textual.app import App
+    from textualicious import functional
 
     @dataclass
     class TaskItem:
@@ -151,18 +158,11 @@ if __name__ == "__main__":
         due_date: datetime
         completed: bool
 
-    class DemoApp(App):
-        """Demo application showing DataClassTable usage."""
+    items = [
+        TaskItem(1, "Write documentation", datetime(2024, 1, 15), False),
+        TaskItem(2, "Fix bugs", datetime(2024, 1, 16), True),
+        TaskItem(3, "Release version", datetime(2024, 1, 17), False),
+    ]
+    table = DataClassTable(TaskItem, cursor_type="row", items=items)
 
-        def compose(self):
-            table = DataClassTable(TaskItem, cursor_type="row")
-            # Add some sample data
-            table.add_item(
-                TaskItem(1, "Write documentation", datetime(2024, 1, 15), False)
-            )
-            table.add_item(TaskItem(2, "Fix bugs", datetime(2024, 1, 16), True))
-            table.add_item(TaskItem(3, "Release version", datetime(2024, 1, 17), False))
-            yield table
-
-    app = DemoApp()
-    app.run()
+    functional.show(table)
