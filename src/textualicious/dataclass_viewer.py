@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from fieldz import fields
 from rich.table import Table
 from textual.widgets import Static
 
@@ -59,6 +58,8 @@ class DataClassViewer(Static):
 
     def _update_content(self) -> None:
         """Update the displayed content."""
+        from fieldz import fields
+
         table = Table(show_header=False, pad_edge=False, show_edge=True)
 
         # Add columns
@@ -94,3 +95,16 @@ class DataClassViewer(Static):
             table.add_row(*row)
 
         self.update(table)
+
+
+if __name__ == "__main__":
+    from dataclasses import dataclass
+
+    from textualicious import functional
+
+    @dataclass
+    class Test:
+        a: int
+        b: str
+
+    functional.show(DataClassViewer(Test(1, "test")))

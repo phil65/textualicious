@@ -29,3 +29,9 @@ class HelpScreen(ModalScreen[None]):
                 id="help-scroll-keys-info",
             )
         yield Footer()
+
+
+if __name__ == "__main__":
+    from textualicious import functional
+
+    functional.show(HelpScreen("This is a test"))

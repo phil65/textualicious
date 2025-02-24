@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from textual.screen import Screen
+
 
 if TYPE_CHECKING:
     import os
@@ -20,7 +22,7 @@ def show_path(path: str | os.PathLike[str]) -> None:
     show(widget)
 
 
-def show(widget: Widget):
+def show(widget: Widget | Screen):
     """Show given widget inside an App."""
     from textual.app import App, ComposeResult
     from textual.widgets import Footer, Header
@@ -30,7 +32,10 @@ def show(widget: Widget):
 
         def compose(self) -> ComposeResult:
             yield Header()
-            yield widget
+            if isinstance(widget, Screen):
+                self.app.push_screen(widget)
+            else:
+                yield widget
             yield Footer()
 
     app = DemoApp()
