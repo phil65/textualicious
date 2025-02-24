@@ -1,4 +1,4 @@
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 from textualicious.dataclass_table import DataClassTable
 from textualicious.dataclass_viewer import DataClassViewer
