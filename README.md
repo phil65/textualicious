@@ -2,8 +2,6 @@
 
 [![PyPI License](https://img.shields.io/pypi/l/textualicious.svg)](https://pypi.org/project/textualicious/)
 [![Package status](https://img.shields.io/pypi/status/textualicious.svg)](https://pypi.org/project/textualicious/)
-[![Daily downloads](https://img.shields.io/pypi/dd/textualicious.svg)](https://pypi.org/project/textualicious/)
-[![Weekly downloads](https://img.shields.io/pypi/dw/textualicious.svg)](https://pypi.org/project/textualicious/)
 [![Monthly downloads](https://img.shields.io/pypi/dm/textualicious.svg)](https://pypi.org/project/textualicious/)
 [![Distribution format](https://img.shields.io/pypi/format/textualicious.svg)](https://pypi.org/project/textualicious/)
 [![Wheel availability](https://img.shields.io/pypi/wheel/textualicious.svg)](https://pypi.org/project/textualicious/)
@@ -21,12 +19,8 @@
 [![Github last commit](https://img.shields.io/github/last-commit/phil65/textualicious)](https://github.com/phil65/textualicious/commits)
 [![Github release date](https://img.shields.io/github/release-date/phil65/textualicious)](https://github.com/phil65/textualicious/releases)
 [![Github language count](https://img.shields.io/github/languages/count/phil65/textualicious)](https://github.com/phil65/textualicious)
-[![Github commits this week](https://img.shields.io/github/commit-activity/w/phil65/textualicious)](https://github.com/phil65/textualicious)
 [![Github commits this month](https://img.shields.io/github/commit-activity/m/phil65/textualicious)](https://github.com/phil65/textualicious)
-[![Github commits this year](https://img.shields.io/github/commit-activity/y/phil65/textualicious)](https://github.com/phil65/textualicious)
 [![Package status](https://codecov.io/gh/phil65/textualicious/branch/main/graph/badge.svg)](https://codecov.io/gh/phil65/textualicious/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![PyUp](https://pyup.io/repos/github/phil65/textualicious/shield.svg)](https://pyup.io/repos/github/phil65/textualicious/)
 
 [Read the documentation!](https://phil65.github.io/textualicious/)
-
