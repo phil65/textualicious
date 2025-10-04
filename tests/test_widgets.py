@@ -6,7 +6,7 @@ import logging
 from typing import TYPE_CHECKING
 
 import pytest
-from textual.app import App, ComposeResult
+from textual.app import App
 
 from textualicious.dataclass_table import DataClassTable
 from textualicious.dataclass_viewer import DataClassViewer
@@ -14,6 +14,8 @@ from textualicious.log_widget import LoggingWidget
 
 
 if TYPE_CHECKING:
+    from textual.app import ComposeResult
+
     from .conftest import SampleData
 
 

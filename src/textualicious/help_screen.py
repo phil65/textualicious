@@ -1,12 +1,17 @@
 """Help screen. Credits to Elia (https://github.com/darrenburns/elia)."""
 
-from typing import ClassVar
+from __future__ import annotations
 
-from textual.app import ComposeResult
+from typing import TYPE_CHECKING, ClassVar
+
 from textual.binding import Binding
 from textual.containers import Vertical, VerticalScroll
 from textual.screen import ModalScreen
 from textual.widgets import Footer, Markdown
+
+
+if TYPE_CHECKING:
+    from textual.app import ComposeResult
 
 
 class HelpScreen(ModalScreen[None]):

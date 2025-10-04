@@ -6,13 +6,14 @@ from pathlib import Path
 from typing import TYPE_CHECKING, ClassVar
 
 from rich.console import Console
-from textual.app import App, ComposeResult
+from textual.app import App
 from textual.binding import Binding
 from textual.containers import Container, Horizontal
 from textual.widgets import Button, Footer, Header, Input, Static
 
 
 if TYPE_CHECKING:
+    from textual.app import ComposeResult
     from textual.screen import Screen
 
 

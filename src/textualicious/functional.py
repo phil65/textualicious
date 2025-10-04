@@ -8,6 +8,7 @@ from textual.screen import Screen
 if TYPE_CHECKING:
     import os
 
+    from textual.app import ComposeResult
     from textual.widget import Widget
 
 
@@ -24,7 +25,7 @@ def show_path(path: str | os.PathLike[str]) -> None:
 
 def show(widget: Widget | Screen):
     """Show given widget inside an App."""
-    from textual.app import App, ComposeResult
+    from textual.app import App
     from textual.widgets import Footer, Header
 
     class DemoApp(App):
