@@ -37,7 +37,6 @@ class TableTestApp(App[None]):
         yield self.table
 
 
-@pytest.mark.asyncio
 async def test_dataclass_table_initialization(sample_data: SampleData) -> None:
     """Test basic initialization of DataClassTable."""
     app = TableTestApp(type(sample_data))
@@ -47,7 +46,6 @@ async def test_dataclass_table_initialization(sample_data: SampleData) -> None:
         assert table._item_type is type(sample_data)
 
 
-@pytest.mark.asyncio
 async def test_dataclass_table_add_item(sample_data: SampleData) -> None:
     """Test adding an item to the table."""
     app = TableTestApp(type(sample_data))
@@ -62,7 +60,6 @@ async def test_dataclass_table_add_item(sample_data: SampleData) -> None:
         assert table.get_item(first_row_key) == sample_data
 
 
-@pytest.mark.asyncio
 async def test_dataclass_table_clear_items(sample_data: SampleData) -> None:
     """Test clearing items from the table."""
     app = TableTestApp(type(sample_data))
@@ -77,7 +74,6 @@ async def test_dataclass_table_clear_items(sample_data: SampleData) -> None:
         assert len(table._items) == 0
 
 
-@pytest.mark.asyncio
 async def test_dataclass_table_invalid_item(sample_data: SampleData) -> None:
     """Test adding invalid item type."""
     app = TableTestApp(type(sample_data))
