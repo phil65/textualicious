@@ -11,11 +11,11 @@ from textualicious.help_screen import HelpScreen
 from textualicious.functional import show, show_path
 
 __all__ = [
-    "__version__",
     "DataClassTable",
     "DataClassViewer",
     "HelpScreen",
     "LoggingWidget",
+    "__version__",
     "show",
     "show_path",
 ]
