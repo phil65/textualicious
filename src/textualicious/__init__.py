@@ -1,8 +1,17 @@
+"""Textualicious: Textual widgets and integrations"""
+
 from __future__ import annotations
 
 from importlib.metadata import version
 
 __version__ = version("textualicious")
+__title__ = "Textualicious"
+__description__ = "Textual widgets and integrations"
+__author__ = "Philipp Temminghoff"
+__author_email__ = "philipptemminghoff@googlemail.com"
+__copyright__ = "Copyright (c) 2025 Philipp Temminghoff"
+__license__ = "MIT"
+__url__ = "https://github.com/phil65/textualicious"
 
 from textualicious.dataclass_table import DataClassTable
 from textualicious.dataclass_viewer import DataClassViewer
