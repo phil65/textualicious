@@ -1,6 +1,6 @@
 [project]
 name = "textualicious"
-version = "0.2.1"
+version = "1.0.0"
 description = "Textual widgets and integrations"
 readme = "README.md"
 requires-python = ">=3.13"
