@@ -2,7 +2,7 @@
 
 [project]
 name = "textualicious"
-version = "1.0.0"
+version = "1.0.1"
 description = "Reusable Textual widgets and screens for dataclasses, logging and remote filesystems"
 readme = "README.md"
 requires-python = ">=3.13"
