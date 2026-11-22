@@ -85,7 +85,12 @@ class DataClassViewer(Static):
             row: list[Any] = [field.name, str(value)]
 
             if self.show_types:
-                type_name = field.type if field.type else "N/A"
+                if not field.type:
+                    type_name = "N/A"
+                elif isinstance(field.type, type):
+                    type_name = field.type.__name__
+                else:
+                    type_name = str(field.type)
                 row.append(type_name)
 
             if self.show_descriptions:

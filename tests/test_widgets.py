@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import make_dataclass
 import logging
 from typing import TYPE_CHECKING
 
@@ -103,6 +104,13 @@ def test_model_viewer_show_options(sample_data: SampleData) -> None:
     assert not viewer.show_types
     assert not viewer.show_descriptions
     assert viewer.show_hidden
+
+
+def test_model_viewer_runtime_type_annotations() -> None:
+    """Fields annotated with real types (not strings) must render."""
+    plain = make_dataclass("Plain", [("a", int), ("b", list[str])])
+    viewer = DataClassViewer(plain(1, ["x"]))
+    assert viewer.obj.a == 1
 
 
 def test_model_viewer_invalid_object() -> None:
