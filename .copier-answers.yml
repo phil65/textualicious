@@ -9,7 +9,7 @@ copyright_holder: Philipp Temminghoff
 copyright_holder_email: philipptemminghoff@googlemail.com
 libraries_use_pydantic: false
 libraries_use_qt: false
-project_description: Textual widgets and integrations
+project_description: Reusable Textual widgets and screens for dataclasses, logging and remote filesystems
 project_name: Textualicious
 python_minimum_version: '3.13'
 python_package_command_line_name: textualicious

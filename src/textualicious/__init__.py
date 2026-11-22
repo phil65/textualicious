@@ -1,6 +1,6 @@
 """Textualicious: main package.
 
-Textual widgets and integrations.
+Reusable Textual widgets and screens for dataclasses, logging and remote filesystems.
 """
 
 from __future__ import annotations

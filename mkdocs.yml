@@ -1,5 +1,5 @@
 site_name: "Textualicious"
-site_description: "Textual widgets and integrations"
+site_description: "Reusable Textual widgets and screens for dataclasses, logging and remote filesystems"
 repo_url: "https://github.com/phil65/textualicious/"
 site_url: https://phil65.github.io/textualicious/
 site_author: "Philipp Temminghoff"
