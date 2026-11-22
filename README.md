@@ -23,3 +23,77 @@
 [![PyUp](https://pyup.io/repos/github/phil65/textualicious/shield.svg)](https://pyup.io/repos/github/phil65/textualicious/)
 
 [Read the documentation!](https://phil65.github.io/textualicious/)
+
+Reusable widgets and screens for [Textual](https://textual.textualize.io/) apps:
+tables and viewers for dataclass-like objects, a logging widget, modal help/log screens
+and a directory tree for local and remote filesystems.
+
+## Installation
+
+```bash
+pip install textualicious
+```
+
+Requires Python 3.13+.
+
+## Quickstart
+
+```python
+from dataclasses import dataclass
+import logging
+
+from textual.app import App, ComposeResult
+
+from textualicious import DataClassTable, DataClassViewer, LoggingWidget
+
+
+@dataclass
+class Task:
+    id: int
+    title: str
+    done: bool = False
+
+
+TASKS = [Task(1, "Write docs"), Task(2, "Fix bugs", done=True)]
+
+
+class TaskApp(App):
+    def compose(self) -> ComposeResult:
+        yield DataClassTable(Task, items=TASKS, cursor_type="row")
+        yield DataClassViewer(TASKS[0])
+        yield LoggingWidget()
+
+    def on_mount(self) -> None:
+        # The widget doubles as a logging handler
+        logging.getLogger().addHandler(self.query_one(LoggingWidget).handler)
+
+    def on_data_class_table_row_selected(self, event: DataClassTable.RowSelected) -> None:
+        logging.getLogger().warning("Selected %s", event.item)
+
+
+if __name__ == "__main__":
+    TaskApp().run()
+```
+
+To try a single widget or screen without writing an app, use `show`:
+
+```python
+from textualicious import HelpScreen, show, show_path
+
+show(HelpScreen("# Help\n\nPress `esc` to close."))
+show_path(".")  # browse a directory (any universal-pathlib / fsspec URL works)
+```
+
+## Features
+
+- **`DataClassTable`**: a `DataTable` for lists of dataclass-like objects (anything
+  [fieldz](https://github.com/pyapp-kit/fieldz) understands: dataclasses, pydantic, attrs, ...).
+  Columns come from the fields; posts `DataClassTable.RowSelected` with the selected item.
+- **`DataClassViewer`**: shows one object as a field / value / type / description table.
+- **`LoggingWidget`**: a `RichLog` with an attached `logging.Handler` (`widget.handler`),
+  colored by log level. `textualicious.log_screen.LogWindow` wraps it in a modal screen.
+- **`HelpScreen`**: a modal screen rendering Markdown help text.
+- **`UniversalDirectoryTree`** (`textualicious.upath_tree`): a `DirectoryTree` backed by
+  [universal-pathlib](https://github.com/fsspec/universal_pathlib), so it can browse remote
+  filesystems (S3, GitHub, ...; install the matching fsspec backend).
+- **`show` / `show_path`**: run a widget or screen in a minimal app for quick previews.
