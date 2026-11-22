@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 class DataClassTable[T](DataTable):
     """A DataTable that displays a list of dataclass-like objects."""
 
-    class RowSelected(Message):
+    class RowSelected(Message):  # ty: ignore[incompatible-attribute-override]
         """Emitted when a row is selected."""
 
         def __init__(self, item: Any) -> None:

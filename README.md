@@ -9,7 +9,6 @@
 [![Implementation](https://img.shields.io/pypi/implementation/textualicious.svg)](https://pypi.org/project/textualicious/)
 [![Releases](https://img.shields.io/github/downloads/phil65/textualicious/total.svg)](https://github.com/phil65/textualicious/releases)
 [![Github Contributors](https://img.shields.io/github/contributors/phil65/textualicious)](https://github.com/phil65/textualicious/graphs/contributors)
-[![Github Discussions](https://img.shields.io/github/discussions/phil65/textualicious)](https://github.com/phil65/textualicious/discussions)
 [![Github Forks](https://img.shields.io/github/forks/phil65/textualicious)](https://github.com/phil65/textualicious/forks)
 [![Github Issues](https://img.shields.io/github/issues/phil65/textualicious)](https://github.com/phil65/textualicious/issues)
 [![Github Issues](https://img.shields.io/github/issues-pr/phil65/textualicious)](https://github.com/phil65/textualicious/pulls)
