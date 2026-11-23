@@ -1,5 +1,11 @@
 # Textualicious
 
+> [!WARNING]
+> **This project is archived and no longer maintained.** Its widgets were experiments;
+> the parts that proved useful live on in [acptui](https://github.com/phil65/acptui)
+> (a file tree over any [upathtools](https://github.com/phil65/upathtools) filesystem,
+> text screenshots, help and log screens). The last release (1.0.1) stays on PyPI.
+
 [![PyPI License](https://img.shields.io/pypi/l/textualicious.svg)](https://pypi.org/project/textualicious/)
 [![Package status](https://img.shields.io/pypi/status/textualicious.svg)](https://pypi.org/project/textualicious/)
 [![Monthly downloads](https://img.shields.io/pypi/dm/textualicious.svg)](https://pypi.org/project/textualicious/)
